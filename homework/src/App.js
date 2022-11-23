@@ -14,7 +14,7 @@ function App() {
       <WarningSign exerciseNumber="1" />
       <MyBadge exerciseNumber="2" color="dark" />
       <SingleBook book={fantasyBooks[0]} />
-      <BookList books={fantasyBooks.slice(0, 8)} />
+      <BookList books={fantasyBooks.slice(0, 12)} />
     </div>
   );
 }

@@ -53,3 +53,8 @@
 .margins-text-card {
   margin-bottom: 0.5rem;
 }
+
+.input-style {
+  width: 300px;
+  padding: 0.5rem;
+}

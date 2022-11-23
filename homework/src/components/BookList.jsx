@@ -1,26 +1,43 @@
-import { Container, Row, Col, Card, Badge } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import SingleBook from "./SingleBook";
+import { Component } from "react";
 
-const BookList = ({ books }) => (
-  <Container fluid>
-    <Row>
-      {books.map((book) => (
-        <Col lg={3}>
-          <Card className="bg-dark text-white image-styling mb-3">
-            <Card.Img src={book.img} alt="Card image" className="" />
-            <Card.ImgOverlay className="single-card">
-              <Card.Title className="margins-text-card">{book.title}</Card.Title>
-              <Card.Text className="margins-text-card">
-                <Badge variant="warning">{book.category}</Badge>
-              </Card.Text>
-              <Card.Text>
-                {book.price} | {book.asin}
-              </Card.Text>
-            </Card.ImgOverlay>
-          </Card>
-        </Col>
-      ))}
-    </Row>
-  </Container>
-);
+class BookList extends Component {
+  state = {
+    inputValue: "",
+  };
+
+  render() {
+    return (
+      <Container fluid>
+        <Row>
+          <input className="mb-3 ml-3 input-style"></input>
+        </Row>
+        <Row>
+          {this.props.books.map((book) => (
+            <Col lg={3}>
+              <SingleBook book={book} />
+            </Col>
+          ))}
+        </Row>
+      </Container>
+    );
+  }
+}
 export default BookList;
+
+// const BookList = ({ books }) => (
+//     <Container fluid>
+//       <Row>
+//         <input className="mb-3 ml-3 input-style"></input>
+//       </Row>
+//       <Row>
+//         {books.map((book) => (
+//           <Col lg={3}>
+//             <SingleBook book={book} />
+//           </Col>
+//         ))}
+//       </Row>
+//     </Container>
+//   );
+//   export default BookList;
