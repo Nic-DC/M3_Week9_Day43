@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+.image-styling {
+  width: 300px;
+  object-fit: cover;
+  color: #282c34;
+}
