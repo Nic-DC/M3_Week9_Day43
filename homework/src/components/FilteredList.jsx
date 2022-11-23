@@ -23,13 +23,7 @@ class FilteredList extends Component {
             }}
           ></input>
         </Row>
-        {this.props.books.filter((book) =>
-          book.title.startsWith(this.state.inputValue)(
-            <Col lg={3}>
-              <FilteredBooks book={book} />
-            </Col>
-          )
-        )}
+        {this.props.books.filter((book) => console.log(book.title.startsWith(this.state.inputValue)))}
         {/* <Row>
           <Col>{this.props.books.filter((book) => book.title.startsWith(this.state.inputValue))}</Col>
         </Row> */}
