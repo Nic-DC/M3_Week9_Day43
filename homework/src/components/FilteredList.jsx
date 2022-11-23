@@ -1,8 +1,8 @@
 import { Container, Row, Col } from "react-bootstrap";
-import SingleBook from "./SingleBook";
+import FilteredBooks from "./FilteredBooks";
 import { Component } from "react";
 
-class BookList extends Component {
+class FilteredList extends Component {
   state = {
     inputValue: "",
     newBooks: null,
@@ -23,13 +23,20 @@ class BookList extends Component {
             }}
           ></input>
         </Row>
+        {this.props.books.filter((book) =>
+          book.title.startsWith(this.state.inputValue)(
+            <Col lg={3}>
+              <FilteredBooks book={book} />
+            </Col>
+          )
+        )}
         {/* <Row>
           <Col>{this.props.books.filter((book) => book.title.startsWith(this.state.inputValue))}</Col>
         </Row> */}
         <Row>
           {this.props.books.map((book) => (
             <Col lg={3}>
-              <SingleBook book={book} />
+              <FilteredBooks book={book} />
             </Col>
           ))}
         </Row>
@@ -37,20 +44,4 @@ class BookList extends Component {
     );
   }
 }
-export default BookList;
-
-// const BookList = ({ books }) => (
-//     <Container fluid>
-//       <Row>
-//         <input className="mb-3 ml-3 input-style"></input>
-//       </Row>
-//       <Row>
-//         {books.map((book) => (
-//           <Col lg={3}>
-//             <SingleBook book={book} />
-//           </Col>
-//         ))}
-//       </Row>
-//     </Container>
-//   );
-//   export default BookList;
+export default FilteredList;
