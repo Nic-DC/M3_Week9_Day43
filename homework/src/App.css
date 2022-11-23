@@ -42,3 +42,14 @@
   object-fit: cover;
   color: #282c34;
 }
+
+.single-card {
+  background-color: rgba(40, 44, 52, 0.5);
+  color: white;
+  font-size: 0.8rem;
+  height: 30%;
+}
+
+.margins-text-card {
+  margin-bottom: 0.5rem;
+}

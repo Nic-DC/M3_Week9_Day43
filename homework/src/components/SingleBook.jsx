@@ -1,16 +1,16 @@
-import { Card } from "react-bootstrap";
-// import image from "../assets/dmitry-ratushny-O33IVNPb0RI-unsplash.jpg";
+import { Card, Badge } from "react-bootstrap";
 
-const SingleBook = ({ book: { img, title } }) => (
-  <Card className="bg-dark text-white image-styling">
+const SingleBook = ({ book: { img, title, category, price, asin } }) => (
+  <Card className="bg-dark text-white image-styling mb-3">
     <Card.Img src={img} alt="Card image" className="" />
-    <Card.ImgOverlay>
-      <Card.Title>{title}</Card.Title>
-      <Card.Text>
-        This is a wider card with supporting text below as a natural lead-in to additional content. This content is a
-        little bit longer.
+    <Card.ImgOverlay className="single-card">
+      <Card.Title className="margins-text-card">{title}</Card.Title>
+      <Card.Text className="margins-text-card">
+        <Badge variant="warning">{category}</Badge>
       </Card.Text>
-      <Card.Text>Last updated 3 mins ago</Card.Text>
+      <Card.Text>
+        {price} | {asin}
+      </Card.Text>
     </Card.ImgOverlay>
   </Card>
 );
