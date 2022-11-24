@@ -12,7 +12,7 @@ class CommentArea extends Component {
 
   fetchComments = async () => {
     try {
-      let response = await fetch(`https://striveschool-api.herokuapp.com/api/comments/0316438960`, {
+      let response = await fetch(`https://striveschool-api.herokuapp.com/api/comments/${this.state._id}`, {
         headers: {
           Authorization:
             "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzdmNjJkZWQ4MzkzNTAwMTVlOGM0YTciLCJpYXQiOjE2NjkyOTI3NjcsImV4cCI6MTY3MDUwMjM2N30.VAtNDwGFRCEleVAcqqgYklY-psB9reqjvbkLrGgGbPI",
