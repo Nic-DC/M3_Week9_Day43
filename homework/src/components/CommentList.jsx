@@ -1,12 +1,16 @@
 import { Component } from "react";
-import { ListGroup, ListItem } from "react-bootstrap";
+import { ListGroup } from "react-bootstrap";
 
 class CommentList extends Component {
   render() {
     return (
-      <ListGroup>
-        <ListGroup.Item>hlaskdf</ListGroup.Item>
-      </ListGroup>
+      <div>
+        {this.props.commentsList.map((comment) => (
+          <ListGroup key={comment.asin}>
+            <ListGroup.Item>{comment.comment}</ListGroup.Item>
+          </ListGroup>
+        ))}
+      </div>
     );
   }
 }
