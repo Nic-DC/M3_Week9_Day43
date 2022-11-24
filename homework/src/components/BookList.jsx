@@ -23,12 +23,16 @@ class BookList extends Component {
             }}
           ></input>
         </Row>
-        {/* <Row>
-          <Col>{this.props.books.filter((book) => book.title.startsWith(this.state.inputValue))}</Col>
-        </Row> */}
+        {this.props.books
+          .filter((book) => book.title.includes(this.state.inputValue))
+          .map((book) => (
+            <Col lg={2}>
+              <SingleBook book={book} />
+            </Col>
+          ))}
         <Row>
           {this.props.books.map((book) => (
-            <Col lg={3}>
+            <Col lg={2}>
               <SingleBook book={book} />
             </Col>
           ))}

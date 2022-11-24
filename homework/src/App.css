@@ -38,16 +38,22 @@
 }
 
 .image-styling {
-  width: 300px;
+  width: 200px;
+  /* height: 150px; */
   object-fit: cover;
   color: #282c34;
 }
 
+.title-size {
+  font-size: 0.6rem;
+}
+
 .single-card {
-  background-color: rgba(40, 44, 52, 0.5);
+  background-color: rgba(40, 44, 52, 0.6);
   color: white;
-  font-size: 0.8rem;
-  height: 30%;
+  font-size: 0.6rem;
+  height: 100%;
+  cursor: pointer;
 }
 
 .margins-text-card {
