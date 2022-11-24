@@ -5,11 +5,12 @@ import CommentArea from "./CommentArea";
 class SingleBook extends Component {
   state = {
     selectedBook: null,
+    id: "",
   };
   render() {
     return (
-      <div className="mb-3">
-        <Card className="bg-dark text-white image-styling mb-3" key={this.props.book.asin}>
+      <div className="mb-3" key={this.props.book.asin}>
+        <Card className="bg-dark text-white image-styling mb-3">
           <Card.Img src={this.props.book.img} alt="Card image" className="image-styling" />
           <Card.ImgOverlay
             className="single-card"
@@ -18,7 +19,10 @@ class SingleBook extends Component {
 
               this.setState({
                 selectedBook: this.props.book,
+                id: this.props.book.asin,
               });
+
+              console.log("the asin is:", this.state.id);
             }}
           >
             <Card.Title className="margins-text-card title-size">{this.props.book.title}</Card.Title>
@@ -30,7 +34,7 @@ class SingleBook extends Component {
             </Card.Text>
           </Card.ImgOverlay>
         </Card>
-        <CommentArea selectedBook={this.state.selectedBook} />
+        <CommentArea selectedBook={this.state.selectedBook} bookId={this.state.id} />
       </div>
     );
   }

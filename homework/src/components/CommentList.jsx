@@ -5,9 +5,9 @@ class CommentList extends Component {
   render() {
     return (
       <div>
-        {this.props.commentsList.map((comment) => (
-          <ListGroup key={comment.asin}>
-            <ListGroup.Item>{comment.comment}</ListGroup.Item>
+        {this.props.commentsList.map((com) => (
+          <ListGroup key={this.props._id}>
+            <ListGroup.Item>{com.comment}</ListGroup.Item>
           </ListGroup>
         ))}
       </div>
